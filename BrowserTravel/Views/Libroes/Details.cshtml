@@ -1,0 +1,48 @@
+﻿@model BrowserTravel.Entidades.Libro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2" @Html.DisplayNameFor(model => model.Editoriales_id)>
+            # ISBN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Editoriales_id)
+        </dd>
+        <dt class="col-sm-2" @Html.DisplayNameFor(model => model.Titulo)>
+            Title
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2" @Html.DisplayNameFor(model => model.Sinopsis)>
+            Synopsis
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sinopsis)
+        </dd>
+        <dt class="col-sm-2" @Html.DisplayNameFor(model => model.N_paginas)>
+            Number of pages
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.N_paginas)
+        </dd>
+        <dt class="col-sm-2" @Html.DisplayNameFor(model => model.FechaCreacion)>
+            Creation Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ISBN">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

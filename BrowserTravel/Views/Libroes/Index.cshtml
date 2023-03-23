@@ -1,0 +1,67 @@
+﻿@model IEnumerable<BrowserTravel.Entidades.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Books</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Libroes" asp-action="Index">
+    <p>
+        Search: <input type="text" name="buscar" class="form-text" />
+        <input type="submit" value="Search" class="btn btn-sm btn-dark" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th @Html.DisplayNameFor(model => model.Editoriales_id)>
+                # ISBN
+            </th>
+            <th @Html.DisplayNameFor(model => model.Titulo)>
+                Title
+            </th>
+            <th @Html.DisplayNameFor(model => model.Sinopsis)>
+                Synopsis
+            </th>
+            <th @Html.DisplayNameFor(model => model.N_paginas)>
+                Numbre of pages
+            </th>
+            <th @Html.DisplayNameFor(model => model.FechaCreacion)>
+                Creation date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Editoriales_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinopsis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.N_paginas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ISBN">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ISBN">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ISBN">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

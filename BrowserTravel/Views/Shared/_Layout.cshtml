@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BrowserTravel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BrowserTravel.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <header class="bg-body">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-linear-gradient(90deg,#1c3643,#273b47 25%, #1e5372) border-bottom box-shadow mb-3 ">
+            <div class="container-fluid justify-content-between">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">BrowserTravel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav justify-content-between">
+                        <li class="nav-item">
+                            
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="bi bi-house-door position"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Autors" asp-action="Index">
+                                <i class="bi bi-person-vcard"></i>
+                                Autors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Editorials" asp-action="Index">
+                                <i class="bi bi-pen"></i>
+                                Editorials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Libroes" asp-action="Index">
+                                <i class="bi bi-book-half"></i>
+                                Books</a>
+                        </li>
+                    </ul>
+                    <partial name="_LinksLogin" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-4">
+            @RenderBody()
+            
+        </main>
+        
+    </div>
+
+    <footer class="border-top footer text-muted bg-body align-items-center">
+        <div class="container text-center">
+            &copy; 2023 - BrowserTravel - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
